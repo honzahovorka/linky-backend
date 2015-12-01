@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: linky_development
+  username: linky
+  password:
+
+test:
+  <<: *default
+  database: linky_test
+
+production:
+  <<: *default
+  database: linky_production
+  username: linky
+  password: <%= ENV['LINKY_DATABASE_PASSWORD'] %>
