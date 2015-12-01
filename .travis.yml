@@ -3,5 +3,16 @@ rvm: 2.2.3
 cache: bundler
 sudo: false
 install: bundle install
+
+addons:
+  postgresql: "9.4"
+
+services:
+  - postgresql
+
+before_script:
+  - cp config/database.yml.travis config/database.yml
+  - psql -c 'create database linky_test;' -U postgres
+
 notifications:
-  email: false
+  email: fals
