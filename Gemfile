@@ -17,6 +17,7 @@ group :test do
   gem 'dotenv-rails'
   gem 'simplecov', require: false
   gem 'coveralls', require: false
+  gem 'shoulda-matchers', '~> 3.0'
 end
 
 group :development do
